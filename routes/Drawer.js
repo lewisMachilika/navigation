@@ -1,18 +1,31 @@
 
 import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
 import HomeNavigation from './HomeNavigation';
 import AboutNavigation from './AboutNavigation';
+import {MaterialIcons} from '@expo/vector-icons'
 const Drawer = createDrawerNavigator();
-export default function MyDrawer() {
+const MyDrawer=()=> {
   return (
-      <Drawer.Navigator initialRouteName="HomeNavigation">
-        <Drawer.Screen name="Home Screen" component={HomeNavigation} />
-        <Drawer.Screen name="About Screen" component={AboutNavigation} />
+      <Drawer.Navigator initialRouteName="HomeNavigation" screenOptions={{headerShown: false}} >
+        <Drawer.Screen name="Home Screen" component={HomeNavigation} options={{drawerLabel:"Home",          
+          drawerIcon: ({focused, size}) => (
+                  <MaterialIcons
+                    name="home" size={20}
+                  />
+              )}
+           } />
+        <Drawer.Screen name="About Screen" component={AboutNavigation} options={{drawerLabel:"About",          
+          drawerIcon: ({focused, size}) => (
+                  <MaterialIcons
+                    name="info" size={20}
+                  />
+              )}
+           }/>
       </Drawer.Navigator>
   );
 }
+export default MyDrawer
 
 
 // import * as React from 'react';

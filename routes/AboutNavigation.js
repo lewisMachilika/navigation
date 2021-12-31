@@ -5,18 +5,18 @@ import About from '../screens/About';
 
 const Stack = createNativeStackNavigator();
 
-const HomeNavigation = ()=> {
+const AboutNavigation = ()=> {
   return (
       <Stack.Navigator    
         screenOptions={{
                 headerStyle:globalStyles.header,
                 headerTitleAlign:'center',
-                headerShown: false
+                //headerShown: false
         }}
       >
-        <Stack.Screen name="Abount" component={About} options={{ title: 'About' } } />
+        <Stack.Screen name="About" component={About} options={({navigation})=>{ return {headerTitle:()=><Header navigation={navigation} title='About'/> }}} />
       </Stack.Navigator>
   );
 }
 
-export default HomeNavigation;
+export default AboutNavigation;

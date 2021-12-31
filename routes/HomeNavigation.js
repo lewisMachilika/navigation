@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ReviewDetails from '../screens/ReviewDetail';
 import Home from '../screens/Home';
 import {globalStyles} from '../styles/globals'
+import Header from '../shared/Header'
 
 const Stack = createNativeStackNavigator();
 
@@ -16,8 +16,8 @@ const HomeNavigation = ()=> {
                // headerShown: false
         }}
       >
-        <Stack.Screen name="Home" component={Home} options={{ title: 'Home Screen' } } />
-        <Stack.Screen name="ReviewDetails" component={ReviewDetails} options={{ title: 'Revide details Screen'}} />
+        <Stack.Screen name="Home" component={Home} options={({navigation})=>{ return {headerTitle:()=><Header navigation={navigation} title='Home'/> }}} />
+        <Stack.Screen name="ReviewDetails" component={ReviewDetails} options={ { title:'Review details'}} />
       </Stack.Navigator>
   );
 }

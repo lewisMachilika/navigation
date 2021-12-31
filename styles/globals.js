@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
-        //paddingTop: 20,
+        padding: 20,
     },
     text: {
         fontFamily:'ubuntu-regular',
@@ -15,6 +15,14 @@ export const globalStyles = StyleSheet.create({
         lineHeight: 20
     },
     header: {
-        backgroundColor: '#aaa'
+        backgroundColor: '#ddd'
     },
+  });
+
+  export const images = StyleSheet.create({
+    "7": require("../assets/7.png"),
+    "8": require("../assets/8.png"),
+    "9": require("../assets/9.png"),
+    "10": require("../assets/10.png"),
+
   });
