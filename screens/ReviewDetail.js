@@ -9,7 +9,7 @@ const ReviewDetails = ({navigation, route: { params }})=>{
         <View style={globalStyles.container}>
             <Card >
                 <Text style={globalStyles.text}>{params.title}</Text>
-                <Text style={styles.body}>{params.body}</Text>
+                <Text>{params.body}</Text>
                 <View style={styles.imageContainer}>
                     <Text>Rating:</Text>
                     <Image style={styles.image} source={images[params.rating]}/>
@@ -24,15 +24,17 @@ const styles = StyleSheet.create({
     image:{
         width: 50,
         height: 50,
-        position: 'absolute',
-        left: 50,
+        // position: 'absolute',
+        // left: 50,
         top: -12
     },
     imageContainer:{
         flexDirection: 'row',
-    },
-    body:{
-        marginBottom:10
+        justifyContent: 'center',
+        paddingTop: 16,
+        marginTop: 16,
+        borderTopWidth: 1,
+        borderTopColor: '#eee'
     },
 });
 export default ReviewDetails;
